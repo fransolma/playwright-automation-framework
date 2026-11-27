@@ -49,3 +49,19 @@ Run UI tests:
 npm run test:ui
 ```
 
+## Current Coverage
+
+- Login form heading validation.
+- Invalid credentials error validation.
+- Successful login with the expected user displayed.
+- Logout with the login form displayed again.
+
+
+Copy the environment template:
+
+```bash
+cp .env.example .env
+```
+
+Set `TEST_USER_EMAIL`, `TEST_USER_PASSWORD`, and `TEST_USER_NAME`
+using a registered Automation Exercise test account.
