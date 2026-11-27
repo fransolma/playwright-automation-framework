@@ -8,6 +8,7 @@ A practical e-Commerce test automation project built with Playwright and JavaScr
 - Invalid credentials error validation.
 - Successful login with the expected user displayed.
 - Logout with the login form displayed again.
+- Authenticated session reuse without repeating the UI login in the test.
 
 ## Architecture
 
@@ -61,4 +62,29 @@ Run UI tests:
 
 ```bash
 npm run test:ui
+```
+
+## Authentication State
+
+The setup project logs in, verifies the expected user and saves
+authentication state to `playwright/.auth/user.json`.
+
+The authenticated project depends on setup and loads the saved state
+into a separate browser context for each test.
+
+The guest project runs without saved authentication state.
+
+Authentication state files are excluded from version control.
+Separate browser contexts may still access shared server-side account data.
+
+Run authenticated tests, including setup:
+
+```bash
+npx playwright test --project=authenticated
+```
+
+Run guest tests independently:
+
+```bash
+npx playwright test --project=guest
 ```
