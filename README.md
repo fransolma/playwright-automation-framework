@@ -6,6 +6,8 @@ A practical e-Commerce test automation project built with Playwright and JavaScr
 
 - Login form heading validation.
 - Invalid credentials error validation.
+- Successful login with the expected user displayed.
+- Logout with the login form displayed again.
 
 ## Architecture
 
@@ -14,6 +16,7 @@ A practical e-Commerce test automation project built with Playwright and JavaScr
 - Assertions contain reusable validations.
 - Page Objects compose these components.
 - Custom fixtures provide Page Objects to each test.
+- Shared components encapsulate elements used across pages, such as the Header.
 
 ## Installation
 
@@ -28,6 +31,17 @@ Install Chromium and its system dependencies:
 ```bash
 npx playwright install --with-deps chromium
 ```
+
+Copy the environment template:
+
+```bash
+cp .env.example .env
+```
+
+Set `TEST_USER_EMAIL`, `TEST_USER_PASSWORD`, and `TEST_USER_NAME`
+using a registered Automation Exercise test account.
+
+The local `.env` file is excluded from version control.
 
 ## Running Tests
 
@@ -48,20 +62,3 @@ Run UI tests:
 ```bash
 npm run test:ui
 ```
-
-## Current Coverage
-
-- Login form heading validation.
-- Invalid credentials error validation.
-- Successful login with the expected user displayed.
-- Logout with the login form displayed again.
-
-
-Copy the environment template:
-
-```bash
-cp .env.example .env
-```
-
-Set `TEST_USER_EMAIL`, `TEST_USER_PASSWORD`, and `TEST_USER_NAME`
-using a registered Automation Exercise test account.
